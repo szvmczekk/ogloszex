@@ -1,5 +1,5 @@
 FROM maven:amazoncorretto AS MAVEN_BUILD
-COPY ./pom.xlm ./pom.xml
+COPY ./pom.xml ./pom.xml
 RUN mvn dependency:go-offline -B
 COPY ./src ./src
 RUN mvn clean package
